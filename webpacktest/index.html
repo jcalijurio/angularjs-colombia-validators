@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Colombia Validators</title>
+    <meta name="description" content="Colombia Validators">
+    <meta name="author" content="Jorge Calijurio">
+
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+
+        .danger {
+            color: #f00;
+        }
+
+        .ok {
+            color: #00f;
+        }
+
+        .m-top {
+            margin-top: 20px;
+        }
+
+        .m-top-2x {
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="home">
+    <h1>Colombia Validators</h1>
+    <a href="https://github.com/jcalijurio/colombia-validators">GitHub</a>
+
+    <div ng-controller="ctrl-home">
+        <form name="form1" id="form1" novalidate>
+            <h2>NIT</h2>
+            <div class="m-top">
+                <label for="generalNIT">NIT:</label>
+                <input type="tel" name="generalNIT" id="generalNIT" ng-model="docs.general" minlength="12" maxlength="13" co-nit />
+                <span class="danger" ng-if="form1.generalNIT.$error.nit">invalid</span>
+            </div>
+            <h3 class="m-top">Result</h3>
+            <pre>
+{{ docs | json}}
+            </pre>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
+    <script src="../bundle.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
