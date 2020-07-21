@@ -59,6 +59,16 @@
             <pre>
 {{ plates | json}}
             </pre>
+            <h2>Phone Number</h2>
+            <div class="m-top">
+                <label for="generalPhone">All phone number formats:</label>
+                <input type="text" name="generalPhone" id="generalPhone" ng-model="phones.general" co-phone />
+                <span class="danger" ng-if="form1.generalPhone.$error.phone">invalid</span>
+            </div>
+            <h3 class="m-top">Result</h3>
+            <pre>
+{{ phones | json}}
+            </pre>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>

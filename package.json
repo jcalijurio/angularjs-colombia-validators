@@ -1,6 +1,6 @@
 {
   "name": "angularjs-colombia-validators",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AngularJS directives for Colombia data validators",
   "main": "angularjs-colombia-validator.min.js",
   "scripts": {
