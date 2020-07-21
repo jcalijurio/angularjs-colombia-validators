@@ -3,4 +3,5 @@ angular.module('home', ['colombia.validators'])
         $scope.docs = {};
         $scope.plates = {};
         $scope.phones = {};
+        $scope.zipcodes = {};
     }]);

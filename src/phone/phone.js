@@ -4,7 +4,7 @@ const { ShortPattern, CompletePattern } = require('../masks/phone.masks');
 const maskFactory = require('../helpers/mask-factory');
 
 module.exports = maskFactory({
-    clearValue: rawValue => rawValue.replace(/\D/g, ''),
+    clearValue: rawValue => rawValue.replace(/\D/g, '').slice(0, 10),
     format: cleanValue => {
         const formattedValue = chooseFormat(cleanValue);
 
