@@ -17,7 +17,11 @@ describe('plate', () => {
             { value: 'AAA12', viewValue: 'AAA-12' },
             { value: 'R12345', viewValue: 'R-12345' },
             { value: '123456', viewValue: '12-3456' },
-            { value: 'T1234', viewValue: 'T-1234' }
+            { value: 'T1234', viewValue: 'T-1234' },
+            { value: 'S12345', viewValue: 'S-12345' },
+            { value: 'SZS885', viewValue: 'SZS-885' },
+            { value: 'TMW772', viewValue: 'TMW-772' },
+            { value: 'RMW772', viewValue: 'RMW-772' }
         ];
 
         // Act / Assert
@@ -29,7 +33,7 @@ describe('plate', () => {
         });
     });
 
-    it('must ignore validity when the value size is less than 6', () => {
+    it('must ignore validity when the value size is less than 5 or 6', () => {
         // Arrange
         const input = TestUtil.compile('<input type="text" ng-model="model" co-car-plate >');
         const tests = [
@@ -39,7 +43,10 @@ describe('plate', () => {
             { value: 'T123', viewValue: 'T-123' },
             { value: 'R1234', viewValue: 'R-1234' },
             { value: '1234', viewValue: '12-34' },
-            { value: '123', viewValue: '123' }
+            { value: '123', viewValue: '123' },
+            { value: 'S1234', viewValue: 'S-1234' },
+            { value: 'TMW77', viewValue: 'TMW-77' },
+            { value: 'SZS88', viewValue: 'SZS-88' }
         ];
 
         // Act / Assert

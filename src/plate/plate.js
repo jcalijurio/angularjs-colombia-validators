@@ -5,14 +5,19 @@ const validator = require('../validators/validators');
 const maskFactory = require('../helpers/mask-factory');
 
 const diplomaticRegex = /^[A-Z]{2}\d{1,4}$/;
+const oldMotorcycleRegex = /^[A-Z]{3}\d{2}$/;
 const motorcycleRegex = /^[A-Z]{3}\d{2}[A-Z]{1}$/;
 const armedForcesRegex = /^\d{4,6}$/;
 const tuktukRegex = /^\d{1,3}[A-Z]{0,3}$/;
-const trailerRegex = /^\R\d{0,5}$/;
-const tankRegex = /^\T\d{0,4}$/;
+const trailerRegex = /^(R|S)\d{1,5}$/;
+const tankRegex = /^T{1}\d{1,}/;
 
 module.exports = maskFactory({
-    clearValue: rawValue => rawValue.replace(/[^A-Za-z0-9]/g, '').slice(0, 6).toUpperCase(),
+    clearValue: rawValue => {
+        const cleanValue = rawValue.replace(/[^A-Za-z0-9]/g, '').toUpperCase()
+        const size = tankRegex.test(cleanValue) || oldMotorcycleRegex.test(cleanValue) ? 5 : 6;
+        return cleanValue.slice(0, size);
+    },
     format: cleanValue => {
         let pattern = choosePattern(cleanValue);
 

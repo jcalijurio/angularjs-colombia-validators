@@ -28,7 +28,6 @@ describe('co-zipcode', () => {
         // Arrange
         var input = TestUtil.compile('<input type="tel" ng-model="model" co-zipcode >');
         var tests = [
-            '1234567',
             '12345'
         ];
 

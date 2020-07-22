@@ -26,7 +26,7 @@ describe('co-phone', () => {
         // Arrange
         var input = TestUtil.compile('<input type="tel" ng-model="model" co-phone >');
         var tests = [
-            '12345678901',
+            '1234567',
             '123456789'
         ];
 
